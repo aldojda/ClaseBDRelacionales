@@ -33,3 +33,5 @@ tabla 4:  catalogo productos
 6. pack_type as varchart(15)
 7. vol_ml as varchart(15)
 
+
+
