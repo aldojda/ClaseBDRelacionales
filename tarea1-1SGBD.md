@@ -53,5 +53,14 @@ En la tabla anterior se utilizan:
 * llave primaria: cada tabla contiene una y sólo una llave primaria la cual permite definir la entidad, siendo requerido que tenga un valor no nulo
 * llave única: una llave primaria por definición deberia de ser única, sin embargo es posible tener mas de una llave unica en una tabla.
 * llave externa: permite relacionar una llave padre (llave primaria) con otra tabla, siendo que en cada tabla pueden existir multiples llaves externas.
+ 
+ Algunos ejempos de Sistema gestor de Bases de datos son :
+
+* Oracle
+* DB2
+* PostgreSQL
+* MySQL
+* MS SQL Server
+* MariaDB
 
 
