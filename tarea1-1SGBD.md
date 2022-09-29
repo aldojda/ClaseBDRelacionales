@@ -66,8 +66,6 @@ En la tabla anterior se utilizan:
 Para el proyecto se trabajará con MS SQL Server debido a que es la herramienta más usada en el departamento donde trabajo.
 
 
-
-
 ##  Describir una base de datos y sus Relaciones de manera no estructurada
 
 
@@ -85,24 +83,30 @@ tabla 1: Maestro Clientes
 tabla 2: Volumen
 
 1. id_cliente as int
-3. producto as int
+2. producto as int
 3. month as int 
-2. volumen as varchart(10)
+4. volumen as float
+5. Income as float 
+6. Promotion as float 
+7. Revenue as float 
+8. Ayudas as float 
+9. Ayudas as float 
 
 tabla 3 capacidad Fria
 
 1. id_cliente as int
 2. cap_fri as int
 3. status_cap_fri as varchart(10)
+4. FechaEntrega as datetime
 
 tabla 4:  catalogo productos
-1. sku as int
-2. line extension as varchart(15)
-3. Marca as varchart(15)
-4. tipo_liquido as varchart(15)
-5. diamante_precios as varchart(15)
-6. pack_type as varchart(15)
-7. vol_ml as varchart(15)
+1. id_producto as int
+2. line extension as varchart(25)
+3. Marca as varchart(25)
+4. bottle_type as varchart(25)
+5. diamante_precios as varchart(25)
+6. pack_type as varchart(25)
+7. vol_ml as varchart(25)
 
 
 
