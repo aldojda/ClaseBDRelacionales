@@ -1,11 +1,19 @@
 # Tarea 2: Modelo Entidad Relación: 
 
+
+<style>
+.mermaid
+
+{ width:100%; }
+</style>
+
+
 ```mermaid
 
 graph TD
 
-    re_3{Tiene} -->|N| p1[pedido]
     catsku[Producto] -->|N|re_3{Tiene}
+     re_3{Tiene} -->|N| p1[pedido]
 
     catsku[Producto] --> cat1(id_producto)
         cat1-->w1(int)
@@ -24,6 +32,17 @@ graph TD
     catsku[Producto] --> cat7(bottle_type)
         cat7-->w7(varchart25)
 
+ 
+    
+
+
+
+    re_1{Tiene} -->|1| C1[Cliente]
+    p1[Pedido] -->|N|re_1{Tiene}
+
+   re_2{Tiene} -->|1| C1[Cliente]
+    cap[CapacidadFria] -->|N|re_2{Tiene}
+    
 
     C1[Cliente] --> c1_id(id_cliente)
         c1_id-->Z(int)
@@ -42,8 +61,7 @@ graph TD
     C1[Cliente] --> c8(Situacion)
         c8-->z7(varchart_25)
     
-    re_1{Tiene} -->|1| C1[Cliente]
-    p1[Pedido] -->|N|re_1{Tiene}
+
 
     p1[pedido] --> p2(id_pedido)
         p2-->x1(int)
@@ -66,8 +84,7 @@ graph TD
     p1[pedido] --> p6(cajas)
         p6-->x10(float)
 
-    re_2{Tiene} -->|1| C1[Cliente]
-    cap[CapacidadFria] -->|N|re_2{Tiene}
+
 
     cap[capacidadFria] --> cap1(id_equipo)
         cap1-->y1(int)
@@ -77,5 +94,5 @@ graph TD
         cap3-->y3(varchart_25)
     cap[capacidadFria] --> cap4(fechaEntrega)
         cap3-->y4(datetime32)
-        
+
 ```
