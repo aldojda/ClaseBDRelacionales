@@ -67,7 +67,8 @@ Para el proyecto se trabajará con MS SQL Server debido a que es la herramienta 
 
 
 
-## Tarea 1 : Describir una base de datos y sus Relaciones de manera no estructurada
+
+##  Describir una base de datos y sus Relaciones de manera no estructurada
 
 
 tabla 1: Maestro Clientes
