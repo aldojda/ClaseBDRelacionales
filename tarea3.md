@@ -16,14 +16,6 @@ CapacidadFria( <u>id_refrigerador</u>, cap_fri, status, fechaEntrega, id_cliente
 CatalogoSku( <u>id_producto</u>, lineExtension, marca, bottle_type, diamante_precios, pack_type, vol_ml)
 
 
-MasterCliente_VentaDiaria(id_cliente, id_cliente)
-
-
-MasterCliente_CapacidadFria(id_cliente, id_cliente)
-
-ventaDiaria_CatalogoSku(id_producto, id_producto)
-
-
 ## Diagrama entidad Relación
 
 ```mermaid
@@ -51,7 +43,8 @@ erDiagram
         float ayudas
         int   cajas
         }
-    MasterCliente ||--o{ CapacidadFria : cuenta
+    MasterCliente ||--o{ CapacidadFria : capacidadFria
+
     CapacidadFria {
         int id_cliente
         int cap_fri
@@ -76,7 +69,7 @@ erDiagram
 
 * traemos las columnas id_cliente y producto de los clientes del canal offtrade y con un volumen por producto mayor que 300 hl
 
-$$\prod{}_{idCliente, lineExtension} \left(\sigma_{Cliente\cdot canal =offtrade \bigvee VentaDiaria\cdot volumen > 300 }\left(MasterClientes   \times  VentaDiaria \right) \right) $$
+$$\prod{}_{idCliente, lineExtension} \left(\sigma_{Cliente\cdot canal =offtrade \bigwedge  VentaDiaria\cdot volumen > 300 }\left(MasterClientes   \times  VentaDiaria \right) \right) $$
 
 
 
@@ -84,12 +77,12 @@ $$\prod{}_{idCliente, lineExtension} \left(\sigma_{Cliente\cdot canal =offtrade 
 
 
 
-$$\prod{}_{idCliente, capFria, status, volumen } \left(\sigma_{MasterClientes\cdot canal = ontrade \bigvee (  CapacidadFria \cdot Status = EnApego \bigwedge  CapacidadFria \cdot capFri > 500) }\left(MasterClientes   \times  VentaDiaria  \times CapacidadFria \right) \right) $$
+$$\prod{}_{idCliente, capFria, status, volumen } \left(\sigma_{MasterClientes\cdot canal = ontrade \bigwedge (  CapacidadFria \cdot Status = EnApego \bigvee  CapacidadFria \cdot capFri > 500) }\left(MasterClientes   \times  VentaDiaria  \times CapacidadFria \right) \right) $$
 
 * traemos todos los clientes que hayan comprado  la line extension Heineken Silver y mas de 3caja
 
-$$\prod{}_{idCliente } \left(\sigma_{CatSkus\cdot lineExtension = HeinekenSilver \bigvee   ventaDiaria \cdot cajas > 3 }\left(MasterClientes   \times  VentaDiaria  \times catalogoSKU \right) \right) $$
+$$\prod{}_{idCliente } \left(\sigma_{CatSkus\cdot lineExtension = HeinekenSilver \bigwedge  ventaDiaria \cdot cajas > 3 }\left(MasterClientes   \times  VentaDiaria  \times catalogoSKU \right) \right) $$
 
 * traemos las columnas clientes y marcas donde se filtraran aquellos clientes que compren productos del diamante de precios mainstream o premium 
 
-$$\prod{}_{idCliente, marca } \left(\sigma_{CatSkus\cdot diamantePrecios = mainstream \bigwedge   CatSkus\cdot diamantePrecios = premium }\left(MasterClientes   \times  VentaDiaria  \times catalogoSKU \right) \right) $$
+$$\prod{}_{idCliente, marca } \left(\sigma_{CatSkus\cdot diamantePrecios = mainstream \bigvee   CatSkus\cdot diamantePrecios = premium }\left(MasterClientes   \times  VentaDiaria  \times catalogoSKU \right) \right) $$
