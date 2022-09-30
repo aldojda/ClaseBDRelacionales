@@ -20,7 +20,7 @@ CatalogoSku( <u>id_producto</u>, lineExtension, marca, bottle_type, diamante_pre
 
 ```mermaid
 erDiagram
-    MasterCliente ||--o{ VentaDiaria : realiza
+    MasterCliente ||--o{ VentaDiaria : o
     MasterCliente {
         int id_cliente
         string dr
@@ -43,7 +43,7 @@ erDiagram
         float ayudas
         int   cajas
         }
-    MasterCliente ||--o{ CapacidadFria : capacidadFria
+    MasterCliente ||--o{ CapacidadFria : o
 
     CapacidadFria {
         int id_cliente
@@ -52,7 +52,7 @@ erDiagram
         date FechaEntrega
         int id_refrigerador 
         }
-    VentaDiaria ||--o{ CatalogoSku : contiene
+    VentaDiaria ||--o{ CatalogoSku : o
     CatalogoSku {
         int id_producto
         string line_extension
