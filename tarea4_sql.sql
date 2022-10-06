@@ -114,7 +114,7 @@ INSERT INTO coldCapacity(id_fridge, cold_capacity, id_cliente, date_in,eq_status
 
 CREATE TABLE catalogSKU (
  id_product  INT,
- product_desc VARCHAR(25),
+ product_desc VARCHAR(50),
  line_extension VARCHAR(40),
  bottle_type VARCHAR(20),
  returnability VARCHAR(10),
